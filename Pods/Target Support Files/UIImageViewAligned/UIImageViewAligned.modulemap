@@ -1,0 +1,6 @@
+framework module UIImageViewAligned {
+  umbrella header "UIImageViewAligned-umbrella.h"
+
+  export *
+  module * { export * }
+}

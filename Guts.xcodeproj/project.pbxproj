@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9816C838231538070056629D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C837231538070056629D /* AppDelegate.swift */; };
-		9816C83A231538070056629D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C839231538070056629D /* ViewController.swift */; };
 		9816C83D231538070056629D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9816C83B231538070056629D /* Main.storyboard */; };
 		9816C83F231538090056629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9816C83E231538090056629D /* Assets.xcassets */; };
 		9816C842231538090056629D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9816C840231538090056629D /* LaunchScreen.storyboard */; };
 		9816C84D231538090056629D /* GutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C84C231538090056629D /* GutsTests.swift */; };
 		9816C858231538090056629D /* GutsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C857231538090056629D /* GutsUITests.swift */; };
+		9816C87B231538970056629D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C866231538970056629D /* ViewController.swift */; };
+		9816C87C231538970056629D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C867231538970056629D /* Logger.swift */; };
+		9816C87D231538970056629D /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C869231538970056629D /* APIKeys.swift */; };
+		9816C87E231538970056629D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86A231538970056629D /* Networking.swift */; };
+		9816C87F231538970056629D /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86B231538970056629D /* UserCredentials.swift */; };
+		9816C880231538970056629D /* ArtsyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86C231538970056629D /* ArtsyAPI.swift */; };
+		9816C881231538970056629D /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86D231538970056629D /* NetworkLogger.swift */; };
+		9816C882231538970056629D /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86F231538970056629D /* JSONAble.swift */; };
+		9816C883231538970056629D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C870231538970056629D /* AppDelegate.swift */; };
+		9816C884231538970056629D /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C871231538970056629D /* GlobalFunctions.swift */; };
+		9816C885231538970056629D /* UIKit+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C873231538970056629D /* UIKit+Rx.swift */; };
+		9816C886231538970056629D /* Observable+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C874231538970056629D /* Observable+Logging.swift */; };
+		9816C887231538970056629D /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C875231538970056629D /* Observable+Operators.swift */; };
+		9816C888231538970056629D /* Observable+JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C876231538970056629D /* Observable+JSONAble.swift */; };
+		9816C889231538970056629D /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C877231538970056629D /* HelperFunctions.swift */; };
+		9816C88A231538970056629D /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C879231538970056629D /* UIStoryboardExtensions.swift */; };
+		9816C88B231538970056629D /* StoryboardIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C87A231538970056629D /* StoryboardIdentifiers.swift */; };
+		B730E86C9DD4F2BEDE759F67 /* Pods_Guts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6474D0C6A8435032F820BE51 /* Pods_Guts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6474D0C6A8435032F820BE51 /* Pods_Guts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9816C834231538070056629D /* Guts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guts.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9816C837231538070056629D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9816C839231538070056629D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9816C83C231538070056629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9816C83E231538090056629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9816C841231538090056629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +62,25 @@
 		9816C853231538090056629D /* GutsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GutsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9816C857231538090056629D /* GutsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutsUITests.swift; sourceTree = "<group>"; };
 		9816C859231538090056629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9816C866231538970056629D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9816C867231538970056629D /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		9816C869231538970056629D /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		9816C86A231538970056629D /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		9816C86B231538970056629D /* UserCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
+		9816C86C231538970056629D /* ArtsyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtsyAPI.swift; sourceTree = "<group>"; };
+		9816C86D231538970056629D /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		9816C86F231538970056629D /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
+		9816C870231538970056629D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9816C871231538970056629D /* GlobalFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		9816C873231538970056629D /* UIKit+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Rx.swift"; sourceTree = "<group>"; };
+		9816C874231538970056629D /* Observable+Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Logging.swift"; sourceTree = "<group>"; };
+		9816C875231538970056629D /* Observable+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
+		9816C876231538970056629D /* Observable+JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+JSONAble.swift"; sourceTree = "<group>"; };
+		9816C877231538970056629D /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		9816C879231538970056629D /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
+		9816C87A231538970056629D /* StoryboardIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiers.swift; sourceTree = "<group>"; };
+		B218841901F4621F72A62451 /* Pods-Guts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guts.release.xcconfig"; path = "Target Support Files/Pods-Guts/Pods-Guts.release.xcconfig"; sourceTree = "<group>"; };
+		F0C05F7DB97179C0B19E27E6 /* Pods-Guts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guts.debug.xcconfig"; path = "Target Support Files/Pods-Guts/Pods-Guts.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B730E86C9DD4F2BEDE759F67 /* Pods_Guts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +109,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D335A7363DA8518EE5E4F34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0C05F7DB97179C0B19E27E6 /* Pods-Guts.debug.xcconfig */,
+				B218841901F4621F72A62451 /* Pods-Guts.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8A7F20A35448135462BD01E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6474D0C6A8435032F820BE51 /* Pods_Guts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9816C82B231538070056629D = {
 			isa = PBXGroup;
 			children = (
+				9816C865231538970056629D /* App */,
+				9816C872231538970056629D /* Rxswift Extension */,
+				9816C878231538970056629D /* Storyboards */,
 				9816C836231538070056629D /* Guts */,
 				9816C84B231538090056629D /* GutsTests */,
 				9816C856231538090056629D /* GutsUITests */,
 				9816C835231538070056629D /* Products */,
+				7D335A7363DA8518EE5E4F34 /* Pods */,
+				8A7F20A35448135462BD01E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +155,6 @@
 		9816C836231538070056629D /* Guts */ = {
 			isa = PBXGroup;
 			children = (
-				9816C837231538070056629D /* AppDelegate.swift */,
-				9816C839231538070056629D /* ViewController.swift */,
 				9816C83B231538070056629D /* Main.storyboard */,
 				9816C83E231538090056629D /* Assets.xcassets */,
 				9816C840231538090056629D /* LaunchScreen.storyboard */,
@@ -125,6 +181,63 @@
 			path = GutsUITests;
 			sourceTree = "<group>";
 		};
+		9816C865231538970056629D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9816C866231538970056629D /* ViewController.swift */,
+				9816C867231538970056629D /* Logger.swift */,
+				9816C868231538970056629D /* Networking */,
+				9816C86E231538970056629D /* Models */,
+				9816C870231538970056629D /* AppDelegate.swift */,
+				9816C871231538970056629D /* GlobalFunctions.swift */,
+			);
+			name = App;
+			path = Guts/App;
+			sourceTree = "<group>";
+		};
+		9816C868231538970056629D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9816C869231538970056629D /* APIKeys.swift */,
+				9816C86A231538970056629D /* Networking.swift */,
+				9816C86B231538970056629D /* UserCredentials.swift */,
+				9816C86C231538970056629D /* ArtsyAPI.swift */,
+				9816C86D231538970056629D /* NetworkLogger.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9816C86E231538970056629D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9816C86F231538970056629D /* JSONAble.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9816C872231538970056629D /* Rxswift Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9816C873231538970056629D /* UIKit+Rx.swift */,
+				9816C874231538970056629D /* Observable+Logging.swift */,
+				9816C875231538970056629D /* Observable+Operators.swift */,
+				9816C876231538970056629D /* Observable+JSONAble.swift */,
+				9816C877231538970056629D /* HelperFunctions.swift */,
+			);
+			name = "Rxswift Extension";
+			path = "Guts/Rxswift Extension";
+			sourceTree = "<group>";
+		};
+		9816C878231538970056629D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9816C879231538970056629D /* UIStoryboardExtensions.swift */,
+				9816C87A231538970056629D /* StoryboardIdentifiers.swift */,
+			);
+			name = Storyboards;
+			path = Guts/Storyboards;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9816C85C231538090056629D /* Build configuration list for PBXNativeTarget "Guts" */;
 			buildPhases = (
+				EDC27E81A0570B6C3100CE4A /* [CP] Check Pods Manifest.lock */,
 				9816C830231538070056629D /* Sources */,
 				9816C831231538070056629D /* Frameworks */,
 				9816C832231538070056629D /* Resources */,
+				7ADD6491A04C51BEC9821391 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,13 +366,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7ADD6491A04C51BEC9821391 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Guts/Pods-Guts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Guts/Pods-Guts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Guts/Pods-Guts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDC27E81A0570B6C3100CE4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Guts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9816C830231538070056629D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9816C83A231538070056629D /* ViewController.swift in Sources */,
-				9816C838231538070056629D /* AppDelegate.swift in Sources */,
+				9816C885231538970056629D /* UIKit+Rx.swift in Sources */,
+				9816C884231538970056629D /* GlobalFunctions.swift in Sources */,
+				9816C882231538970056629D /* JSONAble.swift in Sources */,
+				9816C881231538970056629D /* NetworkLogger.swift in Sources */,
+				9816C87B231538970056629D /* ViewController.swift in Sources */,
+				9816C87E231538970056629D /* Networking.swift in Sources */,
+				9816C87C231538970056629D /* Logger.swift in Sources */,
+				9816C87D231538970056629D /* APIKeys.swift in Sources */,
+				9816C880231538970056629D /* ArtsyAPI.swift in Sources */,
+				9816C889231538970056629D /* HelperFunctions.swift in Sources */,
+				9816C886231538970056629D /* Observable+Logging.swift in Sources */,
+				9816C888231538970056629D /* Observable+JSONAble.swift in Sources */,
+				9816C887231538970056629D /* Observable+Operators.swift in Sources */,
+				9816C88B231538970056629D /* StoryboardIdentifiers.swift in Sources */,
+				9816C883231538970056629D /* AppDelegate.swift in Sources */,
+				9816C87F231538970056629D /* UserCredentials.swift in Sources */,
+				9816C88A231538970056629D /* UIStoryboardExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +602,7 @@
 		};
 		9816C85D231538090056629D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0C05F7DB97179C0B19E27E6 /* Pods-Guts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +621,7 @@
 		};
 		9816C85E231538090056629D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B218841901F4621F72A62451 /* Pods-Guts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

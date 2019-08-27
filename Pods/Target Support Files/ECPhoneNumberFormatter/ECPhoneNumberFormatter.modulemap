@@ -1,0 +1,6 @@
+framework module ECPhoneNumberFormatter {
+  umbrella header "ECPhoneNumberFormatter-umbrella.h"
+
+  export *
+  module * { export * }
+}
