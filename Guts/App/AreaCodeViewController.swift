@@ -27,7 +27,7 @@ class AreaCodeViewController: UIViewController {
         let container = UIView()
         self.view.addSubview(container)
         //container.align(to: self.view)
-        container.alignTop(nil, leading: "0", bottom: nil, trailing: "0", to: view)
+        container.alignTop(nil, leading: "0", bottom: "0", trailing: "0", to: view)
         container.translatesAutoresizingMaskIntoConstraints = false
         let containerHeightConstraint = container.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor,constant: view.safeAreaInsets.bottom)
         containerHeightConstraint.isActive = true
