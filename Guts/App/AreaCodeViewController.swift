@@ -23,22 +23,28 @@ class AreaCodeViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
         self.view.backgroundColor = UIColor.white
+        let container = UIView()
+        self.view.addSubview(container)
+        //container.align(to: self.view)
+        container.alignTop(nil, leading: "0", bottom: nil, trailing: "0", to: view)
+        container.translatesAutoresizingMaskIntoConstraints = false
+        let containerHeightConstraint = container.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor,constant: view.safeAreaInsets.bottom)
+        containerHeightConstraint.isActive = true
+
         phoneFiled = UISearchBar.init()
-        self.view.addSubview(phoneFiled)
+
+        container.addSubview(phoneFiled)
         print(view.safeAreaInsets.top);
         //[self.webView constrainTopSpaceToView:self.flk_topLayoutGuide predicate:@"0"];
     
         //phoneFiled.constrainTopSpace(to: self.flk, predicate: <#T##String!#>)
-        phoneFiled.alignCenterX(with: self.view, predicate: nil)
-        phoneFiled.alignTop(nil, leading: "0", bottom: nil, trailing: "0", to: self.view)
+        phoneFiled.alignCenterX(with: container, predicate: nil)
+        phoneFiled.alignTop("0", leading: "0", bottom: nil, trailing: "0", to: container)
         //phoneFiled.constrainTopSpace(to: self.view, predicate: "100")
         phoneFiled.constrainHeight("50")
         phoneFiled.placeholder = "hello"
-        //phoneFiled.translatesAutoresizingMaskIntoConstraints = false
-        let myViewHeightConstraint = phoneFiled.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: view.safeAreaInsets.bottom)
-        myViewHeightConstraint.isActive = true
+
     }
     
     func initView(){
