@@ -3,16 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8336A48A2316545500F7B9C7 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A4892316545500F7B9C7 /* TextField.swift */; };
+		8336A48C23165B4800F7B9C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A48B23165B4800F7B9C7 /* HomeViewController.swift */; };
+		8336A48E231661B700F7B9C7 /* AreaCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A48D231661B700F7B9C7 /* AreaCodeViewController.swift */; };
 		9816C83D231538070056629D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9816C83B231538070056629D /* Main.storyboard */; };
 		9816C83F231538090056629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9816C83E231538090056629D /* Assets.xcassets */; };
 		9816C842231538090056629D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9816C840231538090056629D /* LaunchScreen.storyboard */; };
 		9816C84D231538090056629D /* GutsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C84C231538090056629D /* GutsTests.swift */; };
 		9816C858231538090056629D /* GutsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C857231538090056629D /* GutsUITests.swift */; };
-		9816C87B231538970056629D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C866231538970056629D /* ViewController.swift */; };
+		9816C87B231538970056629D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C866231538970056629D /* LoginViewController.swift */; };
 		9816C87C231538970056629D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C867231538970056629D /* Logger.swift */; };
 		9816C87D231538970056629D /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C869231538970056629D /* APIKeys.swift */; };
 		9816C87E231538970056629D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86A231538970056629D /* Networking.swift */; };
@@ -51,6 +54,9 @@
 
 /* Begin PBXFileReference section */
 		6474D0C6A8435032F820BE51 /* Pods_Guts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Guts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8336A4892316545500F7B9C7 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		8336A48B23165B4800F7B9C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8336A48D231661B700F7B9C7 /* AreaCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCodeViewController.swift; sourceTree = "<group>"; };
 		9816C834231538070056629D /* Guts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9816C83C231538070056629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9816C83E231538090056629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,7 +68,7 @@
 		9816C853231538090056629D /* GutsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GutsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9816C857231538090056629D /* GutsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutsUITests.swift; sourceTree = "<group>"; };
 		9816C859231538090056629D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9816C866231538970056629D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9816C866231538970056629D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9816C867231538970056629D /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		9816C869231538970056629D /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		9816C86A231538970056629D /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -115,7 +121,6 @@
 				F0C05F7DB97179C0B19E27E6 /* Pods-Guts.debug.xcconfig */,
 				B218841901F4621F72A62451 /* Pods-Guts.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -184,12 +189,15 @@
 		9816C865231538970056629D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				9816C866231538970056629D /* ViewController.swift */,
+				9816C866231538970056629D /* LoginViewController.swift */,
 				9816C867231538970056629D /* Logger.swift */,
 				9816C868231538970056629D /* Networking */,
 				9816C86E231538970056629D /* Models */,
 				9816C870231538970056629D /* AppDelegate.swift */,
 				9816C871231538970056629D /* GlobalFunctions.swift */,
+				8336A4892316545500F7B9C7 /* TextField.swift */,
+				8336A48B23165B4800F7B9C7 /* HomeViewController.swift */,
+				8336A48D231661B700F7B9C7 /* AreaCodeViewController.swift */,
 			);
 			name = App;
 			path = Guts/App;
@@ -415,9 +423,10 @@
 			files = (
 				9816C885231538970056629D /* UIKit+Rx.swift in Sources */,
 				9816C884231538970056629D /* GlobalFunctions.swift in Sources */,
+				8336A48C23165B4800F7B9C7 /* HomeViewController.swift in Sources */,
 				9816C882231538970056629D /* JSONAble.swift in Sources */,
 				9816C881231538970056629D /* NetworkLogger.swift in Sources */,
-				9816C87B231538970056629D /* ViewController.swift in Sources */,
+				9816C87B231538970056629D /* LoginViewController.swift in Sources */,
 				9816C87E231538970056629D /* Networking.swift in Sources */,
 				9816C87C231538970056629D /* Logger.swift in Sources */,
 				9816C87D231538970056629D /* APIKeys.swift in Sources */,
@@ -426,8 +435,10 @@
 				9816C886231538970056629D /* Observable+Logging.swift in Sources */,
 				9816C888231538970056629D /* Observable+JSONAble.swift in Sources */,
 				9816C887231538970056629D /* Observable+Operators.swift in Sources */,
+				8336A48E231661B700F7B9C7 /* AreaCodeViewController.swift in Sources */,
 				9816C88B231538970056629D /* StoryboardIdentifiers.swift in Sources */,
 				9816C883231538970056629D /* AppDelegate.swift in Sources */,
+				8336A48A2316545500F7B9C7 /* TextField.swift in Sources */,
 				9816C87F231538970056629D /* UserCredentials.swift in Sources */,
 				9816C88A231538970056629D /* UIStoryboardExtensions.swift in Sources */,
 			);
