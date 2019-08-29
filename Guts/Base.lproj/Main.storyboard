@@ -37,7 +37,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,7 +95,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" textContentType="one-time-code"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -172,6 +172,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UJj-yZ-Qqo"/>
                     <connections>
+                        <outlet property="areaCode" destination="SSH-2f-A6g" id="ElQ-Lx-ZMZ"/>
                         <outlet property="otpField" destination="O8o-wK-vNJ" id="YHy-xj-IfQ"/>
                         <outlet property="phoneField" destination="ycr-c5-SWN" id="Mu5-y9-awd"/>
                         <outlet property="phoneNumContainer" destination="fGj-Gs-3UM" id="WDG-4a-UHp"/>
