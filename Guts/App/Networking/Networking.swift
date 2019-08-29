@@ -39,8 +39,8 @@ protocol NetworkingType {
 }
 
 struct Networking: NetworkingType {
-    typealias T = ArtsyAPI
-    let provider: OnlineProvider<ArtsyAPI>
+    typealias T = GutsAPI
+    let provider: OnlineProvider<GutsAPI>
 }
 
 
@@ -51,7 +51,7 @@ private extension Networking {
 // "Public" interfaces
 extension Networking {
     /// Request to fetch a given target. Ensures that valid XApp tokens exist before making request
-    func request(_ token: ArtsyAPI, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
+    func request(_ token: GutsAPI, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
         let  w = self.provider.request(token)
         return w
     }
@@ -68,7 +68,7 @@ extension NetworkingType {
         return Networking(provider: OnlineProvider(endpointClosure: endpointsClosure(), requestClosure: Networking.endpointResolver(), stubClosure: MoyaProvider.immediatelyStub, online: .just(true)))
     }
 
-    static func endpointsClosure<T>(_ xAccessToken: String? = nil) -> (T) -> Endpoint where T: TargetType, T: ArtsyAPIType {
+    static func endpointsClosure<T>(_ xAccessToken: String? = nil) -> (T) -> Endpoint where T: TargetType, T: GutsAPIType {
         return { target in
             var endpoint: Endpoint = Endpoint(url: url(target), sampleResponseClosure: {.networkResponse(200, target.sampleData)}, method: target.method, task: target.task, httpHeaderFields: nil)
 
@@ -93,7 +93,7 @@ extension NetworkingType {
     static var plugins: [PluginType] {
         return [
             NetworkLogger(blacklist: { target -> Bool in
-                guard let target = target as? ArtsyAPI else { return false }
+                guard let target = target as? GutsAPI else { return false }
 
                 switch target {
                 
@@ -104,7 +104,7 @@ extension NetworkingType {
     }
     static var authenticatedPlugins: [PluginType] {
         return [NetworkLogger(whitelist: { target -> Bool in
-            guard let target = target as? ArtsyAuthenticatedAPI else { return false }
+            guard let target = target as? GutsAuthenticatedAPI else { return false }
 
             switch target {
             case .myBidPosition: return true
@@ -129,7 +129,7 @@ extension NetworkingType {
     }
 }
 
-private func newProvider<T>(_ plugins: [PluginType], xAccessToken: String? = nil) -> OnlineProvider<T> where T: ArtsyAPIType {
+private func newProvider<T>(_ plugins: [PluginType], xAccessToken: String? = nil) -> OnlineProvider<T> where T: GutsAPIType {
     return OnlineProvider(endpointClosure: Networking.endpointsClosure(xAccessToken),
         requestClosure: Networking.endpointResolver(),
         stubClosure: Networking.APIKeysBasedStubBehaviour,
