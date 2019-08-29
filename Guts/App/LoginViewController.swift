@@ -19,8 +19,11 @@ class LoginViewController: UIViewController{
         navigationController?.pushViewController(homeViewCotroller, animated: true)
     }
     
-    @IBAction func sendOtp(_ sender: UIButton) {
-    }
+    @IBAction func sendOtp(_ sender: Any) {
+        print(phoneField.text)
+        print(areaCode.titleLabel?.text)
+    }   
+    
     
     @IBAction func selectAreaCode(_ sender: Any) {
         let areaCodeVc = AreaCodeViewController()
@@ -52,7 +55,7 @@ class LoginViewController: UIViewController{
 
 extension LoginViewController: ReturnValueDelegate{
     func returnValue(params: String) {
-        logger.log(params)
+        
         areaCode.setTitle("+\(params)", for: .normal)
     }
 }

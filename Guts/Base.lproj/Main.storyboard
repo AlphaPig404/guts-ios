@@ -136,7 +136,7 @@
                                     <color key="titleColor" red="1" green="0.82352941176470584" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="SendOtp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UqQ-2U-frJ"/>
+                                    <action selector="sendOtp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LiT-bn-Qxy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OL-vM-LjT">
