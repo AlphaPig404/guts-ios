@@ -172,6 +172,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="UJj-yZ-Qqo"/>
                     <connections>
+                        <outlet property="areaCode" destination="SSH-2f-A6g" id="ElQ-Lx-ZMZ"/>
                         <outlet property="otpField" destination="O8o-wK-vNJ" id="YHy-xj-IfQ"/>
                         <outlet property="phoneField" destination="ycr-c5-SWN" id="Mu5-y9-awd"/>
                         <outlet property="phoneNumContainer" destination="fGj-Gs-3UM" id="WDG-4a-UHp"/>

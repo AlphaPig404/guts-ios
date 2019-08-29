@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController{
     @IBOutlet weak var phoneNumContainer: UIView!
     @IBOutlet weak var otpField: TextField!
     @IBOutlet weak var phoneField: UITextField!
+    @IBOutlet weak var areaCode: UIButton!
     
     @IBAction func confrimLogin(_ sender: UIButton) {
         let homeViewCotroller = HomeViewController()
@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func selectAreaCode(_ sender: Any) {
         let areaCodeVc = AreaCodeViewController()
+        areaCodeVc.delgete = self
         navigationController?.pushViewController(areaCodeVc, animated: true)
     }
     
@@ -42,6 +43,20 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }
+
+extension LoginViewController: ReturnValueDelegate{
+    func returnValue(params: String) {
+        logger.log(params)
+        areaCode.setTitle("+\(params)", for: .normal)
+    }
+}
+
+
 
 
