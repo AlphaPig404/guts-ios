@@ -26,13 +26,21 @@ class LoginViewController: UIViewController{
     
     
     @IBAction func selectAreaCode(_ sender: Any) {
-        let areaCodeVc = AreaCodeViewController()
-        areaCodeVc.delgete = self
-        navigationController?.pushViewController(areaCodeVc, animated: true)
+        let areaCodeVC = AreaCodeViewController()
+        // 在这种情况下没有引用循环 没有必要【weak self】
+        areaCodeVC.delgete = self
+        areaCodeVC.showDetailClousrue = { area in
+            logger.log("area ---> \(area)")
+            return
+        }
+
+        navigationController?.pushViewController(areaCodeVC, animated: true)
     }
     
     @IBAction func nav2Register(_ sender: Any) {
+        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()

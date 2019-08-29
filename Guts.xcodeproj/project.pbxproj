@@ -33,6 +33,7 @@
 		9816C889231538970056629D /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C877231538970056629D /* HelperFunctions.swift */; };
 		9816C88A231538970056629D /* UIStoryboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C879231538970056629D /* UIStoryboardExtensions.swift */; };
 		9816C88B231538970056629D /* StoryboardIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C87A231538970056629D /* StoryboardIdentifiers.swift */; };
+		9826E8D6231793390074FD1B /* AreaCodeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826E8D5231793390074FD1B /* AreaCodeViewViewModel.swift */; };
 		B730E86C9DD4F2BEDE759F67 /* Pods_Guts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6474D0C6A8435032F820BE51 /* Pods_Guts.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		9816C877231538970056629D /* HelperFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		9816C879231538970056629D /* UIStoryboardExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtensions.swift; sourceTree = "<group>"; };
 		9816C87A231538970056629D /* StoryboardIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiers.swift; sourceTree = "<group>"; };
+		9826E8D5231793390074FD1B /* AreaCodeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCodeViewViewModel.swift; sourceTree = "<group>"; };
 		B218841901F4621F72A62451 /* Pods-Guts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guts.release.xcconfig"; path = "Target Support Files/Pods-Guts/Pods-Guts.release.xcconfig"; sourceTree = "<group>"; };
 		F0C05F7DB97179C0B19E27E6 /* Pods-Guts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Guts.debug.xcconfig"; path = "Target Support Files/Pods-Guts/Pods-Guts.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +203,7 @@
 				8336A4892316545500F7B9C7 /* TextField.swift */,
 				8336A48B23165B4800F7B9C7 /* HomeViewController.swift */,
 				8336A48D231661B700F7B9C7 /* AreaCodeViewController.swift */,
+				9826E8D5231793390074FD1B /* AreaCodeViewViewModel.swift */,
 			);
 			name = App;
 			path = Guts/App;
@@ -425,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9826E8D6231793390074FD1B /* AreaCodeViewViewModel.swift in Sources */,
 				9816C885231538970056629D /* UIKit+Rx.swift in Sources */,
 				9816C884231538970056629D /* GlobalFunctions.swift in Sources */,
 				8336A48C23165B4800F7B9C7 /* HomeViewController.swift in Sources */,

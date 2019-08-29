@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import FLKAutoLayout
+import RxSwift
+
+typealias ShowDetailsClosure = (String) -> Void
 
 protocol ReturnValueDelegate {
     func returnValue(params: String)
@@ -18,6 +21,16 @@ class AreaCodeViewController: UIViewController {
     let cellID = "cell"
     var areaDic: NSDictionary = [:]
     var areaHeaders = [String]()
+    var showDetailClousrue: ShowDetailsClosure?
+    
+    lazy var viewModel: AreaCodeViewModel = {
+        return AreaCodeViewModel()
+    }()
+    
+    deinit {
+        logger.log("deinit ~~")
+    }
+
     var areaArr = [String]()
     var delgete: ReturnValueDelegate?
     let searchBarHeight = "50"
@@ -28,6 +41,23 @@ class AreaCodeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = "Select a country"
+        
+        viewModel
+            .numberOfArea()
+            .subscribe(onNext: { [weak self] area, json in
+                if let strongSelf = self {
+                    strongSelf.areaHeaders = area
+                    strongSelf.areaDic = json
+                    strongSelf.tableView.reloadData()
+                
+                    for (_, value) in json {
+                        strongSelf.areaArr.append(contentsOf: value as! Array)
+                    }
+                }
+        }, onError: nil,
+           onCompleted: {
+            logger.log("completed")
+        }).disposed(by: DisposeBag())
     }
     
     override func viewDidLoad() {
@@ -39,28 +69,27 @@ class AreaCodeViewController: UIViewController {
         let containerHeightConstraint = container.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor,constant: view.safeAreaInsets.bottom)
         containerHeightConstraint.isActive = true
         
-        initData()
         initView(container: container)
     }
     
-    func initData(){
-        let path = Bundle.main.path(forResource: "area_code", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
-        do{
-            let data = try Data(contentsOf: url)
-            let jsonData:Any = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableLeaves)
-            let jsonDic = jsonData as! NSDictionary
-            areaDic = jsonDic
-            for (key, value) in jsonDic{
-                areaHeaders.append(key as! String)
-                
-                areaArr.append(contentsOf: value as! Array)
-            }
-            areaHeaders.sort()
-        }catch let error as Error?{
-            print("read json data error", error ?? "")
-        }
-    }
+//    func initData(){
+//        let path = Bundle.main.path(forResource: "area_code", ofType: "json")
+//        let url = URL(fileURLWithPath: path!)
+//        do{
+//            let data = try Data(contentsOf: url)
+//            let jsonData:Any = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableLeaves)
+//            let jsonDic = jsonData as! NSDictionary
+//            areaDic = jsonDic
+//            for (key, value) in jsonDic{
+//                areaHeaders.append(key as! String)
+//
+//                areaArr.append(contentsOf: value as! Array)
+//            }
+//            areaHeaders.sort()
+//        }catch let error as Error?{
+//            print("read json data error", error ?? "")
+//        }
+//    }
     
     func initView(container: UIView){
         let searchBar = UISearchBar.init()
@@ -119,6 +148,11 @@ extension AreaCodeViewController:UITableViewDelegate, UITableViewDataSource{
         let areaCodeStr = areaStr.split(separator: ",")[1]
         let index = areaCodeStr.index(after: areaCodeStr.startIndex)
         let areaCode = areaCodeStr[index...]
+        
+        logger.log("点击了\(areaCode)")
+        if let showDetialClouser_ = self.showDetailClousrue {
+            showDetialClouser_(areaStr)
+        }
         self.delgete?.returnValue(params: String(areaCode))
         navigationController?.popViewController(animated: true)
     }
