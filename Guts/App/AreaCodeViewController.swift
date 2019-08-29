@@ -70,7 +70,7 @@ class AreaCodeViewController: UIViewController {
     }
 }
 
-extension AreaCodeViewController:UITableViewDelegate, UITableViewDataSource, returnValueDelegate{
+extension AreaCodeViewController:UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let areaSection = areaDic[areaHeaders[section]] as! NSArray
