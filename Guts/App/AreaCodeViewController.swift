@@ -132,18 +132,9 @@ extension AreaCodeViewController:UITableViewDelegate, UITableViewDataSource{
     }
 }
 
-extension AreaCodeViewController: UISearchBarDelegate{
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        logger.log("cancel")
-        isSearch = false
-        searchBar.resignFirstResponder()
-        tableView.reloadData()
-    }
-    
+extension AreaCodeViewController: UISearchBarDelegate{    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        logger.log(searchText)
         searchArray = areaArr.filter{ $0.range(of: searchText) != nil}
-        print("\(searchArray)")
         if(searchArray.count == 0 && searchText.count == 0){
             isSearch = false
         }else{
