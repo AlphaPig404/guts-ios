@@ -21,7 +21,7 @@
 		9816C87D231538970056629D /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C869231538970056629D /* APIKeys.swift */; };
 		9816C87E231538970056629D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86A231538970056629D /* Networking.swift */; };
 		9816C87F231538970056629D /* UserCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86B231538970056629D /* UserCredentials.swift */; };
-		9816C880231538970056629D /* ArtsyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86C231538970056629D /* ArtsyAPI.swift */; };
+		9816C880231538970056629D /* GutsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86C231538970056629D /* GutsAPI.swift */; };
 		9816C881231538970056629D /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86D231538970056629D /* NetworkLogger.swift */; };
 		9816C882231538970056629D /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C86F231538970056629D /* JSONAble.swift */; };
 		9816C883231538970056629D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9816C870231538970056629D /* AppDelegate.swift */; };
@@ -76,7 +76,7 @@
 		9816C869231538970056629D /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		9816C86A231538970056629D /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		9816C86B231538970056629D /* UserCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCredentials.swift; sourceTree = "<group>"; };
-		9816C86C231538970056629D /* ArtsyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtsyAPI.swift; sourceTree = "<group>"; };
+		9816C86C231538970056629D /* GutsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GutsAPI.swift; sourceTree = "<group>"; };
 		9816C86D231538970056629D /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		9816C86F231538970056629D /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
 		9816C870231538970056629D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 				9816C869231538970056629D /* APIKeys.swift */,
 				9816C86A231538970056629D /* Networking.swift */,
 				9816C86B231538970056629D /* UserCredentials.swift */,
-				9816C86C231538970056629D /* ArtsyAPI.swift */,
+				9816C86C231538970056629D /* GutsAPI.swift */,
 				9816C86D231538970056629D /* NetworkLogger.swift */,
 			);
 			path = Networking;
@@ -438,7 +438,7 @@
 				9816C87E231538970056629D /* Networking.swift in Sources */,
 				9816C87C231538970056629D /* Logger.swift in Sources */,
 				9816C87D231538970056629D /* APIKeys.swift in Sources */,
-				9816C880231538970056629D /* ArtsyAPI.swift in Sources */,
+				9816C880231538970056629D /* GutsAPI.swift in Sources */,
 				9816C889231538970056629D /* HelperFunctions.swift in Sources */,
 				9816C886231538970056629D /* Observable+Logging.swift in Sources */,
 				9816C888231538970056629D /* Observable+JSONAble.swift in Sources */,

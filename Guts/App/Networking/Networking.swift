@@ -34,7 +34,7 @@ class OnlineProvider<Target> where Target: Moya.TargetType {
 }
 
 protocol NetworkingType {
-    associatedtype T: TargetType, ArtsyAPIType
+    associatedtype T: TargetType
     var provider: OnlineProvider<T> { get }
 }
 
@@ -43,10 +43,6 @@ struct Networking: NetworkingType {
     let provider: OnlineProvider<ArtsyAPI>
 }
 
-struct AuthorizedNetworking: NetworkingType {
-    typealias T = ArtsyAuthenticatedAPI
-    let provider: OnlineProvider<ArtsyAuthenticatedAPI>
-}
 
 private extension Networking {
 
@@ -55,17 +51,9 @@ private extension Networking {
 // "Public" interfaces
 extension Networking {
     /// Request to fetch a given target. Ensures that valid XApp tokens exist before making request
-//    func request(_ token: ArtsyAPI, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
-//
-//        let actualRequest = self.provider.request(token)
-//        //return self.XAppTokenRequest(defaults).flatMap { _ in actualRequest }
-//        return nil
-//    }
-}
-
-extension AuthorizedNetworking {
-    func request(_ token: ArtsyAuthenticatedAPI, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
-        return self.provider.request(token)
+    func request(_ token: ArtsyAPI, defaults: UserDefaults = UserDefaults.standard) -> Observable<Moya.Response> {
+        let  w = self.provider.request(token)
+        return w
     }
 }
 
@@ -76,16 +64,8 @@ extension NetworkingType {
         return Networking(provider: newProvider(plugins))
     }
 
-    static func newAuthorizedNetworking(_ xAccessToken: String) -> AuthorizedNetworking {
-        return AuthorizedNetworking(provider: newProvider(authenticatedPlugins, xAccessToken: xAccessToken))
-    }
-
     static func newStubbingNetworking() -> Networking {
         return Networking(provider: OnlineProvider(endpointClosure: endpointsClosure(), requestClosure: Networking.endpointResolver(), stubClosure: MoyaProvider.immediatelyStub, online: .just(true)))
-    }
-
-    static func newAuthorizedStubbingNetworking() -> AuthorizedNetworking {
-        return AuthorizedNetworking(provider: OnlineProvider(endpointClosure: endpointsClosure(), requestClosure: Networking.endpointResolver(), stubClosure: MoyaProvider.immediatelyStub, online: .just(true)))
     }
 
     static func endpointsClosure<T>(_ xAccessToken: String? = nil) -> (T) -> Endpoint where T: TargetType, T: ArtsyAPIType {
@@ -116,7 +96,7 @@ extension NetworkingType {
                 guard let target = target as? ArtsyAPI else { return false }
 
                 switch target {
-                case .ping: return true
+                
                 default: return false
                 }
             })

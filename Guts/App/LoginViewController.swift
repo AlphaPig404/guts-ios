@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class LoginViewController: UIViewController{
     @IBOutlet weak var phoneNumContainer: UIView!
@@ -20,9 +21,26 @@ class LoginViewController: UIViewController{
     }
     
     @IBAction func sendOtp(_ sender: Any) {
-        print(phoneField.text)
-        print(areaCode.titleLabel?.text)
-    }   
+        
+        guard let phone = phoneField.text, let erea = areaCode.titleLabel?.text else { return }
+
+        let endpoint: GutsAPI = GutsAPI.sendSMS(area_code: "65", phone: phone, user_agent: "")
+        let provider = Networking.newDefaultNetworking()
+        //provider.
+        //MoyaProvider<Marvel>()
+        
+        provider.request(endpoint)
+            .filterSuccessfulStatusCodes()
+            .mapJSON()
+            .subscribe(onNext: { (response) in
+                logger.log("response")
+            }, onError: { (error) in
+                logger.log("error")
+            }, onCompleted: {
+                logger.log("onCompleted")
+            }).disposed(by: DisposeBag())
+        
+    }
     
     
     @IBAction func selectAreaCode(_ sender: Any) {
