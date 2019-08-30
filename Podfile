@@ -32,5 +32,6 @@ target 'Guts' do
   pod 'Moya/RxSwift'
   pod 'NSObject+Rx'
   pod 'Action'
+  pod 'SnapKit', '~> 4.0'
   
 end

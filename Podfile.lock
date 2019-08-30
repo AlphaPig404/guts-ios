@@ -37,6 +37,7 @@ PODS:
   - SDWebImage (3.8.3):
     - SDWebImage/Core (= 3.8.3)
   - SDWebImage/Core (3.8.3)
+  - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
   - UIImageViewAligned (0.0.1)
@@ -59,6 +60,7 @@ DEPENDENCIES:
   - RxOptional
   - RxSwift
   - SDWebImage (~> 3.7)
+  - SnapKit (~> 4.0)
   - SVProgressHUD
   - SwiftyJSON
   - UIImageViewAligned (from `https://github.com/ashfurrow/UIImageViewAligned.git`)
@@ -84,6 +86,7 @@ SPEC REPOS:
     - RxOptional
     - RxSwift
     - SDWebImage
+    - SnapKit
     - SVProgressHUD
     - SwiftyJSON
     - "UIView+BooleanAnimations"
@@ -122,12 +125,13 @@ SPEC CHECKSUMS:
   RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   UIImageViewAligned: 5726c9651898342c19588a02e2115cace59342ee
   "UIView+BooleanAnimations": a760be9a066036e55f298b7b7350a6cb14cfcd97
   XNGMarkdownParser: aed98c14f0c0eb20064184ddf9bac26c482722b2
 
-PODFILE CHECKSUM: fb980c67e24fd5893872eb6bfdf4c381919c7db3
+PODFILE CHECKSUM: bf0e071e721030bbbb802df11f625bc7458b6741
 
 COCOAPODS: 1.7.5

@@ -11,6 +11,10 @@
 		8336A48C23165B4800F7B9C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A48B23165B4800F7B9C7 /* HomeViewController.swift */; };
 		8336A48E231661B700F7B9C7 /* AreaCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A48D231661B700F7B9C7 /* AreaCodeViewController.swift */; };
 		8336A49023176E3A00F7B9C7 /* area_code.json in Resources */ = {isa = PBXBuildFile; fileRef = 8336A48F23176E3A00F7B9C7 /* area_code.json */; };
+		8336A4922318D78000F7B9C7 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A4912318D78000F7B9C7 /* FeedCell.swift */; };
+		8336A4942318D98400F7B9C7 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A4932318D98400F7B9C7 /* ChallengeCell.swift */; };
+		837861492318E93A00B32364 /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837861482318E93A00B32364 /* ChallengeModel.swift */; };
+		8378614D2318F3A400B32364 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378614C2318F3A400B32364 /* extensions.swift */; };
 		9816C83D231538070056629D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9816C83B231538070056629D /* Main.storyboard */; };
 		9816C83F231538090056629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9816C83E231538090056629D /* Assets.xcassets */; };
 		9816C842231538090056629D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9816C840231538090056629D /* LaunchScreen.storyboard */; };
@@ -60,6 +64,10 @@
 		8336A48B23165B4800F7B9C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8336A48D231661B700F7B9C7 /* AreaCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCodeViewController.swift; sourceTree = "<group>"; };
 		8336A48F23176E3A00F7B9C7 /* area_code.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = area_code.json; sourceTree = "<group>"; };
+		8336A4912318D78000F7B9C7 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		8336A4932318D98400F7B9C7 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
+		837861482318E93A00B32364 /* ChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
+		8378614C2318F3A400B32364 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		9816C834231538070056629D /* Guts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9816C83C231538070056629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9816C83E231538090056629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +136,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8378614B2318F39000B32364 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8378614C2318F3A400B32364 /* extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		8A7F20A35448135462BD01E3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +209,7 @@
 		9816C865231538970056629D /* App */ = {
 			isa = PBXGroup;
 			children = (
+				8378614B2318F39000B32364 /* Helpers */,
 				8336A48F23176E3A00F7B9C7 /* area_code.json */,
 				9816C866231538970056629D /* LoginViewController.swift */,
 				9816C867231538970056629D /* Logger.swift */,
@@ -203,6 +220,8 @@
 				8336A4892316545500F7B9C7 /* TextField.swift */,
 				8336A48B23165B4800F7B9C7 /* HomeViewController.swift */,
 				8336A48D231661B700F7B9C7 /* AreaCodeViewController.swift */,
+				8336A4912318D78000F7B9C7 /* FeedCell.swift */,
+				8336A4932318D98400F7B9C7 /* ChallengeCell.swift */,
 				9826E8D5231793390074FD1B /* AreaCodeViewViewModel.swift */,
 			);
 			name = App;
@@ -225,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				9816C86F231538970056629D /* JSONAble.swift */,
+				837861482318E93A00B32364 /* ChallengeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -431,18 +451,22 @@
 				9826E8D6231793390074FD1B /* AreaCodeViewViewModel.swift in Sources */,
 				9816C885231538970056629D /* UIKit+Rx.swift in Sources */,
 				9816C884231538970056629D /* GlobalFunctions.swift in Sources */,
+				837861492318E93A00B32364 /* ChallengeModel.swift in Sources */,
 				8336A48C23165B4800F7B9C7 /* HomeViewController.swift in Sources */,
 				9816C882231538970056629D /* JSONAble.swift in Sources */,
 				9816C881231538970056629D /* NetworkLogger.swift in Sources */,
 				9816C87B231538970056629D /* LoginViewController.swift in Sources */,
 				9816C87E231538970056629D /* Networking.swift in Sources */,
+				8336A4942318D98400F7B9C7 /* ChallengeCell.swift in Sources */,
 				9816C87C231538970056629D /* Logger.swift in Sources */,
 				9816C87D231538970056629D /* APIKeys.swift in Sources */,
 				9816C880231538970056629D /* GutsAPI.swift in Sources */,
 				9816C889231538970056629D /* HelperFunctions.swift in Sources */,
 				9816C886231538970056629D /* Observable+Logging.swift in Sources */,
+				8378614D2318F3A400B32364 /* extensions.swift in Sources */,
 				9816C888231538970056629D /* Observable+JSONAble.swift in Sources */,
 				9816C887231538970056629D /* Observable+Operators.swift in Sources */,
+				8336A4922318D78000F7B9C7 /* FeedCell.swift in Sources */,
 				8336A48E231661B700F7B9C7 /* AreaCodeViewController.swift in Sources */,
 				9816C88B231538970056629D /* StoryboardIdentifiers.swift in Sources */,
 				9816C883231538970056629D /* AppDelegate.swift in Sources */,

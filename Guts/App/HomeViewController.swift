@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        cv.register(FeedCell.self, forCellWithReuseIdentifier: "cell")
         cv.delegate = self
         cv.dataSource = self
         cv.backgroundColor = UIColor.black
@@ -48,11 +48,7 @@ class HomeViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     override func viewDidLoad() {
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = bgColor
-        navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationItem.titleView = segment
-//        self.navigationController?.navigationBar.backgroundColor = UIColor(
+        setupNav()
         self.view.addSubview(container)
         let containerHeightConstraint = container.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor,constant: view.safeAreaInsets.bottom)
         containerHeightConstraint.isActive = true
@@ -63,6 +59,13 @@ class HomeViewController: UIViewController {
     
     @objc func selectSegment(){
         print(segment.selectedSegmentIndex)
+    }
+    
+    func setupNav(){
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = bgColor
+        navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationItem.titleView = segment
     }
 }
 
@@ -76,7 +79,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIndentifier, for: indexPath)
-        cell.backgroundColor = bgColors[indexPath.row]
+//        cell.backgroundColor = bgColors[indexPath.row]
         return cell
     }
     
