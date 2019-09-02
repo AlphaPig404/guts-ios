@@ -75,6 +75,8 @@ class HomeViewController: UIViewController, FeedCellButtonDelegate {
         switch role {
         case .Player:
             print(role, index)
+            let recordRoom = RecrodRoom()
+            navigationController?.pushViewController(recordRoom, animated: true)
         case .Watcher:
             let watchRoom = WatchRoom()
             navigationController?.pushViewController(watchRoom, animated: true)
