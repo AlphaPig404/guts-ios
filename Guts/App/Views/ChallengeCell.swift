@@ -14,6 +14,8 @@ class ChallengCell: UICollectionViewCell {
     let coverImage: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "cover")
+        view.layer.cornerRadius = 5
+        view.clipsToBounds = true
         return view
     }()
     
@@ -41,7 +43,7 @@ class ChallengCell: UICollectionViewCell {
     
     let button: UIButton = {
         let button = UIButton()
-        button.setTitle("Accept", for: .normal)
+        button.setTitle("Watch", for: .normal)
         button.setTitleColor(UIColor.rgb(red: 0, green: 174, blue: 255), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         button.backgroundColor = UIColor.rgba(red: 255, green: 255, blue: 255, alpha: 0.1)
@@ -104,7 +106,6 @@ class ChallengCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         setupView()
     }
     
@@ -113,22 +114,17 @@ class ChallengCell: UICollectionViewCell {
     }
     
     func setupView(){
-        statusBar.translatesAutoresizingMaskIntoConstraints = false
-        coverImage.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        detailLabel.translatesAutoresizingMaskIntoConstraints = false
-        button.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(statusBar)
+        contentView.addSubview(statusBar)
         statusBar.addSubview(levelIcon)
         statusBar.addSubview(levelLabel)
         statusBar.addSubview(pointLabel)
         statusBar.addSubview(pointIcon)
         statusBar.addSubview(expiredLabel)
         statusBar.addSubview(playIcon)
-        addSubview(coverImage)
-        addSubview(titleLabel)
-        addSubview(detailLabel)
-        addSubview(button)
+        contentView.addSubview(coverImage)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(detailLabel)
+        contentView.addSubview(button)
         backgroundColor = UIColor.black
     }
     
@@ -205,14 +201,14 @@ class ChallengCell: UICollectionViewCell {
         
         contentView.snp_makeConstraints{
             $0.top.left.right.equalToSuperview()
-            $0.bottom.equalTo(button.snp_bottom)
+            $0.bottom.equalTo(button.snp_bottom).offset(20)
         }
     }
     
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
-        layoutAttributes.frame.size.height = contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
-        print("height: \(layoutAttributes.frame.size.height)")
+        setNeedsLayout()
+        layoutIfNeeded()
+        layoutAttributes.frame.size.height = contentView.systemLayoutSizeFitting(layoutAttributes.size).height
         return layoutAttributes
     }
-    
 }

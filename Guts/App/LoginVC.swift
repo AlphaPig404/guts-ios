@@ -65,8 +65,8 @@ class LoginViewController: UIViewController{
     }
     
     func initView(){
-        phoneNumContainer.layer.borderColor = UIColor.init(displayP3Red: 255, green: 255, blue: 255, alpha: 0.2).cgColor
-        otpField.layer.borderColor = UIColor.init(displayP3Red: 255, green: 255, blue: 255, alpha: 0.2).cgColor
+        phoneNumContainer.layer.borderColor = UIColor.rgba(red: 255, green: 255, blue: 255, alpha: 0.2).cgColor
+        otpField.layer.borderColor = UIColor.rgba(red: 255, green: 255, blue: 255, alpha: 0.2).cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {

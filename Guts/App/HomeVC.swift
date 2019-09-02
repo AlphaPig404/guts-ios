@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
-    var items = ["1","2"]
-    let cellIndentifier = "cell"
-    let bgColors: [UIColor] = [.blue,.red]
-    let bgColor = UIColor(red:43/255, green:43/255, blue:48/255, alpha:1.00)
+enum Role: String, CaseIterable{
+    case Player = "Player"
+    case Watcher = "Watcher"
+}
+
+class HomeViewController: UIViewController, FeedCellButtonDelegate {
+    let cellID = "feedCell"
+    let bgColor = UIColor.rgb(red: 43, green: 43, blue: 48)
     
     lazy var container:UIView = {
         let container = UIView()
@@ -26,19 +29,18 @@ class HomeViewController: UIViewController {
         layout.scrollDirection = .horizontal
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(FeedCell.self, forCellWithReuseIdentifier: "cell")
+        cv.register(FeedCell.self, forCellWithReuseIdentifier: cellID)
         cv.delegate = self
         cv.dataSource = self
-        cv.backgroundColor = UIColor.black
         cv.contentInsetAdjustmentBehavior = .never
         cv.isPagingEnabled = true
         return cv
     }()
     
     lazy var segment:UISegmentedControl = {
-        let segment = UISegmentedControl(items: ["Player","Watcher"])
+        let segment = UISegmentedControl(items: [Role.Player.rawValue, Role.Watcher.rawValue])
         segment.sizeToFit()
-        segment.tintColor = UIColor(red: 99/255, green: 99/255, blue: 102/255, alpha: 1.0)
+        segment.tintColor = UIColor.rgb(red: 99, green: 99, blue: 102)
         segment.selectedSegmentIndex = 0
         segment.addTarget(self, action: #selector(selectSegment), for: .valueChanged)
         return segment
@@ -58,7 +60,8 @@ class HomeViewController: UIViewController {
     }
     
     @objc func selectSegment(){
-        print(segment.selectedSegmentIndex)
+        let indexPath = IndexPath(item: segment.selectedSegmentIndex, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
     func setupNav(){
@@ -67,6 +70,16 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.titleView = segment
     }
+    
+    func handleTap(role: Role, at index: Int) {
+        switch role {
+        case .Player:
+            print(role, index)
+        case .Watcher:
+            let watchRoom = WatchRoom()
+            navigationController?.pushViewController(watchRoom, animated: true)
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -74,12 +87,13 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return 0
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return Role.allCases.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIndentifier, for: indexPath)
-//        cell.backgroundColor = bgColors[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! FeedCell
+        cell.delegate = self
+        cell.role = Role.allCases[indexPath.row]
         return cell
     }
     
@@ -88,7 +102,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        logger.log("end")
-        logger.log("\(scrollView.contentOffset.x)")
+        segment.selectedSegmentIndex = Int(scrollView.contentOffset.x/scrollView.frame.width)
     }
 }

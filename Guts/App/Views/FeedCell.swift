@@ -10,18 +10,20 @@ import Foundation
 import UIKit
 
 class FeedCell: UICollectionViewCell {
-    let cellIndentifier = "cellId"
+    let cellID = "cellId"
+    var role: Role?
+    var delegate: FeedCellButtonDelegate?
     
-    lazy var collectionView:UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.size.width
-        layout.estimatedItemSize = CGSize(width: width, height: 160)
-        layout.itemSize = UICollectionViewFlowLayout.automaticSize
+        layout.estimatedItemSize = CGSize(width: width, height: 1)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.register(ChallengCell.self, forCellWithReuseIdentifier: "cellId")
+        cv.register(ChallengCell.self, forCellWithReuseIdentifier: cellID)
         cv.delegate = self
         cv.dataSource = self
         cv.contentInsetAdjustmentBehavior = .never
+        cv.backgroundColor = UIColor.rgb(red: 60, green: 60, blue: 64)
         return cv
     }()
     
@@ -35,14 +37,18 @@ class FeedCell: UICollectionViewCell {
     }
     
     func setupView(){
-        self.addSubview(collectionView)
-        self.backgroundColor = UIColor.blue
+        contentView.addSubview(collectionView)
         collectionView.align(to: self.contentView)
+    }
+    
+    @objc func handleClick(_ sender: UIButton){
+        delegate?.handleTap(role: role!, at: sender.tag)
     }
 }
 
 
 extension FeedCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
@@ -52,7 +58,15 @@ extension FeedCell: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIndentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ChallengCell
+        cell.button.tag = indexPath.row
+        cell.button.addTarget(self, action: #selector(handleClick), for: .touchUpInside)
+        switch role!{
+            case .Player:
+                cell.button.setTitle("Accept", for: .normal)
+            case .Watcher:
+                cell.button.setTitle("Watch", for: .normal)
+        }
         cell.backgroundColor = UIColor.rgb(red: 43, green: 43, blue: 48)
         return cell
     }
