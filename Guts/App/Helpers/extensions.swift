@@ -32,3 +32,50 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
     }
 }
+
+/*
+ let label = UILabel()
+ label.text = Iconfont.qq.rawValue
+ label.font = UIFont.iconfont(ofSize: 18)
+ */
+
+extension UIFont {
+    public class func iconfont(ofSize: CGFloat) -> UIFont? {
+        return UIFont(name: "iconfont", size: ofSize)
+    }
+}
+
+/*
+ let imageView = UIImageView()
+ CGSize(width: 30, height: 30)
+ imageView.image = UIImage(text: Iconfont.qq, fontSize: 30, imageSize: CGSize(width: 30, height: 30), imageColor: UIColor.orange)
+*/
+
+extension UIImage {
+    convenience init?(text: Iconfont, fontSize: CGFloat, imageSize: CGSize = CGSize.zero, imageColor: UIColor = UIColor.black) {
+        guard let iconfont = UIFont.iconfont(ofSize: fontSize) else {
+            self.init()
+            return nil
+        }
+        var imageRect = CGRect(origin: CGPoint.zero, size: imageSize)
+        if __CGSizeEqualToSize(imageSize, CGSize.zero) {
+            imageRect = CGRect(origin: CGPoint.zero, size: text.rawValue.size(withAttributes: [NSAttributedString.Key.font: iconfont]))
+        }
+        UIGraphicsBeginImageContextWithOptions(imageRect.size, false, UIScreen.main.scale)
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = NSTextAlignment.center
+        let text_h = iconfont.lineHeight
+        let text_y = (imageSize.height - text_h)/2
+        let text_rect = CGRect(x:0, y: text_y, width: imageRect.size.width, height: text_h)
+        text.rawValue.draw(in: text_rect.integral, withAttributes: [NSAttributedString.Key.font : iconfont, NSAttributedString.Key.paragraphStyle: paragraphStyle, NSAttributedString.Key.foregroundColor: imageColor])
+        guard let cgImage = UIGraphicsGetImageFromCurrentImageContext()?.cgImage else {
+            self.init()
+            return nil
+        }
+        
+        self.init(cgImage: cgImage)
+    }
+}

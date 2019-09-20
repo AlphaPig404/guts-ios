@@ -25,6 +25,14 @@
 		83786164231B95D500B32364 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83786163231B95D500B32364 /* VideoModel.swift */; };
 		83786166231CF9D600B32364 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83786165231CF9D600B32364 /* RecordVC.swift */; };
 		83786168231D0AE900B32364 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83786167231D0AE900B32364 /* ProgressBar.swift */; };
+		8378616A231F90F100B32364 /* LocalFileListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83786169231F90F100B32364 /* LocalFileListVC.swift */; };
+		8378616C2320B25000B32364 /* VideoEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378616B2320B24F00B32364 /* VideoEditVC.swift */; };
+		837861702322400800B32364 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378616F2322400800B32364 /* ThemeManager.swift */; };
+		83786172232896A200B32364 /* PostVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83786171232896A200B32364 /* PostVideoVC.swift */; };
+		837861742328E57200B32364 /* PostSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837861732328E57200B32364 /* PostSettingCell.swift */; };
+		8378618A2329012900B32364 /* Iconfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837861892329012900B32364 /* Iconfont.swift */; };
+		8378618D232F2E2400B32364 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8378618C232F2CCC00B32364 /* iconfont.ttf */; };
+		8378618F232F5F5000B32364 /* SelectVideoAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8378618E232F5F5000B32364 /* SelectVideoAccessVC.swift */; };
 		9816C83D231538070056629D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9816C83B231538070056629D /* Main.storyboard */; };
 		9816C83F231538090056629D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9816C83E231538090056629D /* Assets.xcassets */; };
 		9816C842231538090056629D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9816C840231538090056629D /* LaunchScreen.storyboard */; };
@@ -88,6 +96,14 @@
 		83786163231B95D500B32364 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		83786165231CF9D600B32364 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		83786167231D0AE900B32364 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		83786169231F90F100B32364 /* LocalFileListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileListVC.swift; sourceTree = "<group>"; };
+		8378616B2320B24F00B32364 /* VideoEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditVC.swift; sourceTree = "<group>"; };
+		8378616F2322400800B32364 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		83786171232896A200B32364 /* PostVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVideoVC.swift; sourceTree = "<group>"; };
+		837861732328E57200B32364 /* PostSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSettingCell.swift; sourceTree = "<group>"; };
+		837861892329012900B32364 /* Iconfont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iconfont.swift; sourceTree = "<group>"; };
+		8378618C232F2CCC00B32364 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		8378618E232F5F5000B32364 /* SelectVideoAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectVideoAccessVC.swift; sourceTree = "<group>"; };
 		9816C834231538070056629D /* Guts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9816C83C231538070056629D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9816C83E231538090056629D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,6 +179,8 @@
 				9816C871231538970056629D /* GlobalFunctions.swift */,
 				8378614C2318F3A400B32364 /* extensions.swift */,
 				83786153231ACA5100B32364 /* protocals.swift */,
+				8378616F2322400800B32364 /* ThemeManager.swift */,
+				837861892329012900B32364 /* Iconfont.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -175,8 +193,21 @@
 				8336A4912318D78000F7B9C7 /* FeedCell.swift */,
 				83786155231AD43E00B32364 /* VideoCell.swift */,
 				83786167231D0AE900B32364 /* ProgressBar.swift */,
+				837861732328E57200B32364 /* PostSettingCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		837861752328FD8F00B32364 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8378615E231ADEDA00B32364 /* video1.mp4 */,
+				8378615D231ADED900B32364 /* video2.mp4 */,
+				8378618C232F2CCC00B32364 /* iconfont.ttf */,
+				8378615B231ADED900B32364 /* video3.mp4 */,
+				8378615C231ADED900B32364 /* video4.mp4 */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		8A7F20A35448135462BD01E3 /* Frameworks */ = {
@@ -190,10 +221,6 @@
 		9816C82B231538070056629D = {
 			isa = PBXGroup;
 			children = (
-				8378615E231ADEDA00B32364 /* video1.mp4 */,
-				8378615D231ADED900B32364 /* video2.mp4 */,
-				8378615B231ADED900B32364 /* video3.mp4 */,
-				8378615C231ADED900B32364 /* video4.mp4 */,
 				9816C865231538970056629D /* App */,
 				9816C872231538970056629D /* Rxswift Extension */,
 				9816C878231538970056629D /* Storyboards */,
@@ -248,6 +275,7 @@
 		9816C865231538970056629D /* App */ = {
 			isa = PBXGroup;
 			children = (
+				837861752328FD8F00B32364 /* Assets */,
 				8378614B2318F39000B32364 /* Helpers */,
 				8336A48F23176E3A00F7B9C7 /* area_code.json */,
 				9816C866231538970056629D /* LoginVC.swift */,
@@ -258,7 +286,11 @@
 				8336A48B23165B4800F7B9C7 /* HomeVC.swift */,
 				8336A48D231661B700F7B9C7 /* AreaCodeVC.swift */,
 				8378614E231AA88D00B32364 /* WatchRoomVC.swift */,
+				83786171232896A200B32364 /* PostVideoVC.swift */,
 				83786165231CF9D600B32364 /* RecordVC.swift */,
+				8378618E232F5F5000B32364 /* SelectVideoAccessVC.swift */,
+				8378616B2320B24F00B32364 /* VideoEditVC.swift */,
+				83786169231F90F100B32364 /* LocalFileListVC.swift */,
 				9826E8D5231793390074FD1B /* AreaCodeViewViewModel.swift */,
 			);
 			name = App;
@@ -416,6 +448,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8378618D232F2E2400B32364 /* iconfont.ttf in Resources */,
 				8378615F231ADEDA00B32364 /* video3.mp4 in Resources */,
 				83786160231ADEDA00B32364 /* video4.mp4 in Resources */,
 				83786161231ADEDA00B32364 /* video2.mp4 in Resources */,
@@ -499,6 +532,8 @@
 				8336A48C23165B4800F7B9C7 /* HomeVC.swift in Sources */,
 				9816C882231538970056629D /* JSONAble.swift in Sources */,
 				9816C881231538970056629D /* NetworkLogger.swift in Sources */,
+				83786172232896A200B32364 /* PostVideoVC.swift in Sources */,
+				8378618F232F5F5000B32364 /* SelectVideoAccessVC.swift in Sources */,
 				9816C87B231538970056629D /* LoginVC.swift in Sources */,
 				83786164231B95D500B32364 /* VideoModel.swift in Sources */,
 				9816C87E231538970056629D /* Networking.swift in Sources */,
@@ -506,15 +541,20 @@
 				9816C87C231538970056629D /* Logger.swift in Sources */,
 				9816C87D231538970056629D /* APIKeys.swift in Sources */,
 				83786166231CF9D600B32364 /* RecordVC.swift in Sources */,
+				8378618A2329012900B32364 /* Iconfont.swift in Sources */,
 				9816C880231538970056629D /* GutsAPI.swift in Sources */,
 				9816C889231538970056629D /* HelperFunctions.swift in Sources */,
 				9816C886231538970056629D /* Observable+Logging.swift in Sources */,
 				8378614D2318F3A400B32364 /* extensions.swift in Sources */,
 				9816C888231538970056629D /* Observable+JSONAble.swift in Sources */,
+				8378616A231F90F100B32364 /* LocalFileListVC.swift in Sources */,
 				9816C887231538970056629D /* Observable+Operators.swift in Sources */,
+				8378616C2320B25000B32364 /* VideoEditVC.swift in Sources */,
 				83786168231D0AE900B32364 /* ProgressBar.swift in Sources */,
 				8336A4922318D78000F7B9C7 /* FeedCell.swift in Sources */,
 				8336A48E231661B700F7B9C7 /* AreaCodeVC.swift in Sources */,
+				837861742328E57200B32364 /* PostSettingCell.swift in Sources */,
+				837861702322400800B32364 /* ThemeManager.swift in Sources */,
 				9816C88B231538970056629D /* StoryboardIdentifiers.swift in Sources */,
 				9816C883231538970056629D /* AppDelegate.swift in Sources */,
 				8378614F231AA88D00B32364 /* WatchRoomVC.swift in Sources */,
